@@ -1,4 +1,3 @@
-
 // ============================================================
 //  HER SAFE PLACE — app.js
 //  Built with love for Ashley Nicole 💜✝️
@@ -286,9 +285,9 @@ function runBreath() {
 
 // ===== MUSIC =====
 const musicLinks = {
-  worship:  "https://www.youtube.com/watch?v=UtdPWHsNnNs",
-  peace:    "https://www.youtube.com/watch?v=3fumBcKC6RE",
-  healing:  "https://www.youtube.com/watch?v=VrXmhwX-tbE"
+  worship:  "https://music.youtube.com/watch?v=GTdnv01yd1A&si=TDg2HW31l39TVquw",
+  peace:    "https://music.youtube.com/watch?v=7bS3BOFSCKg&si=cVILQDNn_bSTPVFS",
+  healing:  "https://music.youtube.com/watch?v=LvAvqNe8fr8&si=nJqYGzhcqHrGtW9T"
 };
 function playMusic(type) {
   window.open(musicLinks[type], "_blank");
