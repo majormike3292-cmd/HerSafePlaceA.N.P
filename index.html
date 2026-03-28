@@ -1,46 +1,214 @@
+
+  
+    <!DOCTYPE html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ashley Nicole ✝️💜</title>
+<title>Ashley Nicole ✝️💜 Her Safe Place</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<!-- FLOATING HEARTS + DOVES -->
 <div class="hearts" id="hearts"></div>
+
+<!-- SACRED GLOW BG -->
+<div class="bg-glow"></div>
+<div class="stars" id="stars"></div>
+
 <div class="container">
 
-<h1 onclick="toggleSecret()">Ashley Nicole ✝️💜</h1>
+  <!-- HEADER -->
+  <header class="hero">
+    <div class="halo-ring"></div>
+    <h1 class="title" onclick="toggleSecret()">Ashley Nicole</h1>
+    <p class="subtitle">✝️ God's Beloved Daughter 💜</p>
+    <p id="secret" class="hidden sacred-reveal">
+      You are covered, protected, and never alone. Heaven sees you. 🕊️
+    </p>
+    <div class="cross-divider">✝</div>
+  </header>
 
-<p id="secret" class="hidden">
-God is walking with you through everything.
-You are deeply loved.
-</p>
+  <!-- PROTECTED IMAGE -->
+  <div class="card glow-card">
+    <h2>💜 Protected Always ✝️</h2>
+    <div class="photo-frame">
+      <img src="family.jpg" class="main-photo" alt="Ashley Nicole">
+      <div class="photo-glow-ring"></div>
+    </div>
+    <p class="verse-text">Jesus and His angels are watching over you always.</p>
+    <p class="scripture">"I will never leave you nor forsake you." — Hebrews 13:5</p>
+  </div>
 
-<!-- PHOTO -->
-<div class="card">
-  <h2>💜 Always Protected ✝️</h2>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Gustave_Dore_Angeli.jpg/800px-Gustave_Dore_Angeli.jpg" class="main-photo" alt="Angels">
-  <p>Covered in love. Ne
-<!-- MESSAGE -->
-<div class="card">
-  <h2>💜 A Message</h2>
-  <div id="letter"></div>
-</div>
+  <!-- ANIMATED MESSAGE FROM MIKE -->
+  <div class="card">
+    <h2>💌 A Message Just For You</h2>
+    <div id="letter" class="letter-text"></div>
+  </div>
 
-<!-- MUSIC -->
-<div class="card">
-  <h2>🎵
+  <!-- 💜 NEW: ENCOURAGING QUOTES BUTTON -->
+  <div class="card love-quotes-card">
+    <h2>💬 Words From Mike's Heart</h2>
+    <p class="card-sub">Tap to receive a message written just for you</p>
+    <button class="love-btn" onclick="showLoveQuote()">
+      <span>Receive Love 💜</span>
+    </button>
+    <div id="loveQuoteBox" class="quote-reveal hidden">
+      <div class="quote-icon">💜</div>
+      <p id="loveQuoteText"></p>
+    </div>
+  </div>
 
-<!-- PRAYER -->
-<div class="card">
-  <h2>🙏 Prayer</h2>
-  <button onclick="pray()">Pray for Me</button>
-  <p id="prayer"></p>
-</
+  <!-- SCRIPTURE -->
+  <div class="card">
+    <h2>✝️ God's Word For You Today</h2>
+    <p id="verse" class="scripture big-verse"></p>
+    <button class="btn-sacred" onclick="newVerse()">New Scripture ✝️</button>
+  </div>
+
+  <!-- PRAYER CORNER -->
+  <div class="card prayer-card">
+    <h2>🙏 Prayer Corner</h2>
+    <p class="card-sub">Speak to God. He is always listening.</p>
+    <div id="prayerDisplay" class="prayer-display">
+      <p id="prayerText" class="prayer-text"></p>
+    </div>
+    <button class="btn-sacred" onclick="newPrayer()">New Prayer 🙏</button>
+  </div>
+
+  <!-- WORSHIP MUSIC -->
+  <div class="card">
+    <h2>🎵 Worship & Peace</h2>
+    <p class="card-sub">Let His presence fill the room</p>
+    <div class="music-buttons">
+      <button class="btn-music" onclick="playMusic('worship')">🎶 Worship</button>
+      <button class="btn-music" onclick="playMusic('peace')">🕊️ Peaceful</button>
+      <button class="btn-music" onclick="playMusic('healing')">💜 Healing</button>
+    </div>
+  </div>
+
+  <!-- DAILY AFFIRMATIONS -->
+  <div class="card">
+    <h2>🌅 Daily Affirmation</h2>
+    <p class="card-sub">Speak this over yourself today</p>
+    <div id="affirmation" class="affirmation-box"></div>
+    <button class="btn-sacred" onclick="newAffirmation()">New Affirmation ✨</button>
+  </div>
+
+  <!-- GRATITUDE JAR -->
+  <div class="card">
+    <h2>🫙 Gratitude Jar</h2>
+    <p class="card-sub">Drop in something you're thankful for</p>
+    <input type="text" id="gratitudeInput" class="sacred-input" placeholder="I am grateful for..." />
+    <button class="btn-sacred" onclick="addGratitude()">Add to Jar 🫙</button>
+    <div id="gratitudeList" class="gratitude-list"></div>
+  </div>
+
+  <!-- JOURNAL -->
+  <div class="card">
+    <h2>💭 Your Sacred Journal</h2>
+    <p class="card-sub">This space is yours. Write freely.</p>
+    <textarea id="journal" class="sacred-textarea" placeholder="Dear God..."></textarea>
+    <button class="btn-sacred" onclick="saveJournal()">Save Safely 🔒</button>
+    <p id="saveMsg" class="save-msg hidden">Saved with love 💜</p>
+  </div>
+
+  <!-- BREATHING EXERCISE -->
+  <div class="card">
+    <h2>🌬️ Peace Breathing</h2>
+    <p class="card-sub">When anxiety comes, breathe with God</p>
+    <div id="breathCircle" class="breath-circle">
+      <span id="breathText">Tap to Begin</span>
+    </div>
+    <button class="btn-sacred" onclick="startBreathing()">Start 🌬️</button>
+  </div>
+
+  <!-- HEALTH + WELLNESS -->
+  <div class="card">
+    <h2>🍓 Wellness Reminders</h2>
+    <div class="wellness-grid">
+      <div class="wellness-item">💧<br><small>Drink Water</small></div>
+      <div class="wellness-item">🍓<br><small>Eat Fruit</small></div>
+      <div class="wellness-item">🚶<br><small>Walk Daily</small></div>
+      <div class="wellness-item">🧠<br><small>Rest Your Mind</small></div>
+      <div class="wellness-item">☀️<br><small>Get Sunlight</small></div>
+      <div class="wellness-item">😴<br><small>Sleep Well</small></div>
+    </div>
+  </div>
+
+  <!-- HOME REMEDIES -->
+  <div class="card">
+    <h2>🌿 Natural Remedies</h2>
+    <div class="remedy-list">
+      <div class="remedy-item">🍯 Honey + warm tea for your throat</div>
+      <div class="remedy-item">🚿 Warm shower to release tension</div>
+      <div class="remedy-item">🌬️ Deep breathing to calm anxiety</div>
+      <div class="remedy-item">🫚 Lavender oil for peace & sleep</div>
+      <div class="remedy-item">🍋 Lemon water for energy & glow</div>
+      <div class="remedy-item">🌿 Chamomile tea before bed</div>
+    </div>
+  </div>
+
+  <!-- TAP LOVE GAME -->
+  <div class="card">
+    <h2>🎮 Tap Love</h2>
+    <p class="card-sub">Every tap is a prayer sent for you 💜</p>
+    <button class="tap-btn" onclick="love()">💜 Tap Me</button>
+    <p id="loveCount" class="love-count">0</p>
+    <p id="loveMilestone" class="milestone"></p>
+  </div>
+
+  <!-- VERSE OF STRENGTH (NEW) -->
+  <div class="card">
+    <h2>⚡ When You Feel Weak</h2>
+    <p class="card-sub">Tap for a Scripture of strength</p>
+    <div id="strengthVerse" class="strength-verse"></div>
+    <button class="btn-sacred" onclick="newStrengthVerse()">Strengthen Me ⚡</button>
+  </div>
+
+  <!-- PROMISES OF GOD (NEW) -->
+  <div class="card promise-card">
+    <h2>📜 God's Promises For You</h2>
+    <p class="card-sub">Every promise is yours to hold</p>
+    <div id="promiseBox" class="promise-box"></div>
+    <button class="btn-sacred" onclick="newPromise()">New Promise 📜</button>
+  </div>
+
+  <!-- DAY / NIGHT MODE -->
+  <div class="card">
+    <h2>🌙 Day & Night Mode</h2>
+    <button class="btn-mode" onclick="toggleMode()" id="modeBtn">☀️ Light Mode</button>
+  </div>
+
+  <!-- FINAL LETTER — DOVES + HEARTS -->
+  <div class="card final-letter-card" id="finalLetterCard">
+    <div class="dove-row" id="doveRow">
+      <span class="dove">🕊️</span>
+      <span class="heart-final">💜</span>
+      <span class="dove">🕊️</span>
+      <span class="heart-final">💜</span>
+      <span class="dove">🕊️</span>
+    </div>
+    <h2 class="final-title">💜 A Letter From Mike</h2>
+    <div id="finalLetter" class="final-letter-text"></div>
+    <div class="dove-row">
+      <span class="heart-final">💜</span>
+      <span class="dove">🕊️</span>
+      <span class="heart-final">💜</span>
+      <span class="dove">🕊️</span>
+      <span class="heart-final">💜</span>
+    </div>
+  </div>
+
+  <p class="footer">✝️ God's got you always. You are never alone. 💜</p>
 
 </div>
 
 <script src="app.js"></script>
-
 </body>
-  
-    
+</html>
